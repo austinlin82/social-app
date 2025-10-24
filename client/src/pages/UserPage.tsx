@@ -1,40 +1,14 @@
-import { useEffect, useState } from 'react'
-import { fetchProfile } from '../apis/user'
 import type { User } from '../utils/schemas'
 
-export default function UserPage() {
-  const [user, setUser] = useState<User | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+type UserPageProps = {
+  user: User | null
+  loading: boolean
+  error: string | null
+}
 
-  useEffect(() => {
-    let mounted = true
-    setLoading(true)
-    fetchProfile()
-      .then((data) => {
-        if (!mounted) return
-        setUser(data)
-        setError(null)
-      })
-      .catch((err) => {
-        if (!mounted) return
-        setError(String(err?.message || err))
-        setUser(null)
-      })
-      .finally(() => {
-        if (!mounted) return
-        setLoading(false)
-      })
-
-    return () => {
-      mounted = false
-    }
-  }, [])
-
+export default function UserPage({ user, loading, error }: UserPageProps) {
   return (
     <div className="user-page">
-      <h2>Current Profile</h2>
-
       {loading && <p>Loading profile…</p>}
       {error && <p className="error">Error: {error}</p>}
 

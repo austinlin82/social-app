@@ -1,6 +1,8 @@
 import type { User } from '../utils/schemas'
 
-const BASE = 'http://localhost:4000/api'
+// Prefer environment variable and fall back to localhost for dev
+const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:4000'
+const BASE = `${API_BASE.replace(/\/$/, '')}/api`
 
 export async function fetchProfile(): Promise<User> {
   const res = await fetch(`${BASE}/profile`)

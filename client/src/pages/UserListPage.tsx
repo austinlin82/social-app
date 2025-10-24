@@ -76,7 +76,7 @@ export default function UserListPage() {
             <img src={u.picture} alt={u.name} className="user-thumb" />
             <div>
               <strong>{u.name}</strong>
-              <div className="muted">{u.email}</div>
+              <div className="muted">{u.location}</div>
             </div>
           </li>
         ))}
