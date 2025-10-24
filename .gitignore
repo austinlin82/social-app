@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+/dist/
+/build/
+client/dist/
+server/dist/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs and caches
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.eslintcache
+.cache/
+.tmp/
+.temp/
+.vscode-test/
+coverage/
+.nyc_output/
+
+# Vite / tooling
+.vite/
+client/.vite/
+
+# Framework-specific (safe even if not present)
+.next/
+.turbo/
+
+# Env files (keep secrets out of git)
+.env
+.env.*
+!.env.example
+client/.env
+client/.env.*
+server/.env
+server/.env.*
+
+# OS/Editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+.history/
+
+# Test/artifact directories (if/when added)
+playwright-report/
+test-results/
+junit.xml
+reports/
