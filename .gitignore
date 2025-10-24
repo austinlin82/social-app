@@ -30,11 +30,11 @@ coverage/
 .vite/
 client/.vite/
 
-# Framework-specific (safe even if not present)
+# Framework-specific
 .next/
 .turbo/
 
-# Env files (keep secrets out of git)
+# Env files
 .env
 .env.*
 !.env.example
@@ -42,18 +42,3 @@ client/.env
 client/.env.*
 server/.env
 server/.env.*
-
-# OS/Editor junk
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-.idea/
-.vscode/
-.history/
-
-# Test/artifact directories (if/when added)
-playwright-report/
-test-results/
-junit.xml
-reports/

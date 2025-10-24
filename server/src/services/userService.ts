@@ -35,7 +35,9 @@ export async function getUsers(page=1, results=20): Promise<{results:User[]; pag
   const cached = get<{results:User[]; page:number}>(key);
   if (cached) return cached;
 
-  const url = `https://randomuser.me/api/?results=${results}&page=${page}&seed=takehome`;
+  const seed = process.env.RANDOMUSER_SEED || 'takehome';
+  const base = process.env.RANDOMUSER_API_URL || 'https://randomuser.me';
+  const url = `${base}/api/?results=${results}&page=${page}&seed=${encodeURIComponent(seed)}`;
   const res = await fetch(url);
   if (!res.ok) throw new Error("Upstream error");
   const data: any = await res.json();

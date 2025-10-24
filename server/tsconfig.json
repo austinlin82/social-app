@@ -7,9 +7,11 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "commonjs",
+  "module": "commonjs",
     "target": "esnext",
-    "types": [],
+  "types": ["vitest/globals", "node"],
+  "esModuleInterop": true,
+  "allowSyntheticDefaultImports": true,
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -39,6 +41,8 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true,
+    "skipLibCheck": true
   }
+,
+  "include": ["src", "server.ts", "tests"]
 }
