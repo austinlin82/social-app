@@ -31,37 +31,42 @@ A simple full‑stack social app that shows a current user profile and a list of
 ### 1) Install dependencies
 
 
-# From the repo root
+From the repo root:
+```
 npm --prefix .\social-app\client i
 npm --prefix .\social-app\server i
-
+```
 
 ### 2) Run the backend (Express)
 
-# From the repo root
+From the repo root:
+```
 npm --prefix .\social-app\server run dev
-# Server will listen on http://localhost:4000
+```
+Server will listen on http://localhost:4000
 
 
 ### 3) Run the frontend (Vite + React)
 
-# From the repo root (in a second terminal)
+From the repo root (in a second terminal)
+```
 npm --prefix .\social-app\client run dev
-# Vite dev server will print the local URL (typically http://localhost:5173)
+```
+Vite dev server will print the local URL (typically http://localhost:5173)
 
 The client expects the API at `http://localhost:4000/api` (currently hardcoded).
 
 ### 4) Run tests
 
 - Frontend tests
-
+```
 npm --prefix .\social-app\client run test
-
+```
 
 - Backend tests
-
+```
 npm --prefix .\social-app\server run test
-
+```
 ## Environment variables
 
 This project reads env files in both the server and client. Copy the examples to `.env`:
